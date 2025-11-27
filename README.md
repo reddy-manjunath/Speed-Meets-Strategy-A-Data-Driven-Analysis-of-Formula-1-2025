@@ -73,11 +73,7 @@ The goal is to convert raw F1 data into meaningful insights and predictive model
 ```
 F1-2025-Analysis/
 │
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── exported/
-│
+├── data
 ├── notebooks/
 │   ├── 01_data_collection.ipynb
 │   ├── 02_eda.ipynb
