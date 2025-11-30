@@ -106,14 +106,6 @@ Used for collecting:
 * Tire compounds
 * Weather
 
-### **Ergast API**
-
-Used for:
-
-* Race results
-* Driver standings
-* Constructor standings
-
 ---
 
 ## 📊 Features Extracted
