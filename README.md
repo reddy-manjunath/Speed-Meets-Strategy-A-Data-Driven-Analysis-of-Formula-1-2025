@@ -71,14 +71,12 @@ F1-2025-Analysis/
 │   ├── processed/        # Cleaned & feature-ready datasets
 │   └── exported/         # CSV / Parquet exports
 │
-├── notebooks/
-│   ├── 01_Working_notebook.ipynb
+│-- 01_Working_notebook.ipynb
 │
 ├── dashboard/
 │   └── app.py            # Streamlit dashboard
 │
-├── reports/
-│   └── final_report.pdf
+├── Trained_tuned_models
 │
 ├── fastf1_cache/
 │
