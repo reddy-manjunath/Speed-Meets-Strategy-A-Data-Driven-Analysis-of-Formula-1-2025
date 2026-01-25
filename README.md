@@ -1,91 +1,81 @@
 # 🏎️ Formula 1 2025 Data Science Project
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue" />
-  <img src="https://img.shields.io/badge/FastF1-Data%20Powered-red" />
-  <img src="https://img.shields.io/badge/ML-Scikit--learn-green" />
-  <img src="https://img.shields.io/badge/Dashboard-Streamlit-orange" />
-</p>
-
 ---
 
 ## 📑 Table of Contents
-
-* [Overview](#-overview)
-* [Objectives](#-objectives)
-* [Tech Stack](#-tech-stack)
-* [Project Structure](#-project-structure)
-* [Data Sources](#-data-sources)
-* [Features Extracted](#-features-extracted)
-* [Machine Learning Models](#-machine-learning-models)
-* [Dashboard Highlights](#-dashboard-highlights)
-* [Key F1 Concepts Used](#-key-f1-concepts-used)
-* [Outcomes](#-outcomes)
-* [Future Improvements](#-future-improvements)
-* [Author](#-author)
-* [License](#-license)
+- Overview  
+- Objectives  
+- Tech Stack  
+- Project Structure  
+- Data Sources  
+- Features Extracted  
+- Machine Learning Models  
+- Dashboard Highlights  
+- Key F1 Concepts Used  
+- Outcomes  
+- Limitations  
+- Future Improvements  
+- Author  
 
 ---
 
 ## 📌 Project Title
-
-**Speed Meets Strategy: A Data-Driven Analysis of Formula 1 2025**
+###                                                 **Speed Meets Strategy: A Data-Driven Analysis of Formula 1 (2025)**
 
 ---
 
 ## 📘 Overview
 
-This project explores the **2025 Formula 1 season** using a combination of **Exploratory Data Analysis (EDA)**, **Machine Learning**, and **interactive dashboards**. It covers how physics, race strategy, car engineering, driver performance, and weather influence race outcomes.
+This project explores the **2025 Formula 1 season** using a combination of **Exploratory Data Analysis (EDA)**, **Machine Learning**, and **interactive dashboards**.
 
-The goal is to convert raw F1 data into meaningful insights and **strategy-focused predictive models**, enabling a deeper understanding of how **race strategies are planned and executed** under different conditions.
+The focus of the project is to understand **how race strategies are historically planned and executed**, rather than simply predicting race winners. It analyzes how **pit stops, tyre strategies, driver consistency, car performance, and race conditions** influence outcomes over the course of a race weekend.
+
+The project converts raw Formula 1 data into **meaningful insights and strategy-focused predictive models**, enabling deeper understanding of decision-making in motorsport.
 
 ---
 
 ## 🎯 Objectives
 
-* Analyze 2025 F1 race data (laps, telemetry, pit stops, weather)
-* Understand performance patterns across drivers and teams
-* Study tire strategies, pit timing, downforce effects, and consistency
-* Build ML models to predict:
-
-  * Pit stop count (1-stop / 2-stop / 3-stop)
-  * First pit stop lap (pit window)
-  * Tire compound sequence (strategy type)
-  * Strategy effectiveness (positions gained/lost)
-* Create an interactive dashboard to visualize insights
-* Use storytelling to explain why drivers win or lose
+- Analyze 2025 Formula 1 race data (laps, pit stops, weather, results)
+- Understand performance patterns across drivers and teams
+- Study tyre strategies, pit timing, consistency, and race evolution
+- Build machine learning models to predict **historical strategy patterns**, including:
+  - Pit stop count (1-stop / 2-stop / 3-stop)
+  - First pit stop lap (pit window)
+  - Tyre compound sequence (strategy type)
+  - Strategy effectiveness indicators (finish position / points context)
+- Create an interactive dashboard for strategy exploration
+- Use storytelling to explain **why strategies succeed or fail**, not just who wins
 
 ---
 
 ## 🧰 Tech Stack
 
-* **Python**
-* **FastF1** (main data source)
-* **Pandas, NumPy**
-* **Matplotlib, Seaborn, Plotly**
-* **Scikit-learn (ML)**
-* **Streamlit (dashboard)**
+- Python  
+- FastF1 (primary race data source)  
+- Pandas, NumPy  
+- Matplotlib, Seaborn, Plotly  
+- Scikit-learn (machine learning)  
+- Streamlit (interactive dashboard)  
+- Google BigQuery (analytics & feature storage)  
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 F1-2025-Analysis/
 │
 ├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── exported/
+│   ├── raw/              # Raw FastF1 & results data
+│   ├── processed/        # Cleaned & feature-ready datasets
+│   └── exported/         # CSV / Parquet exports
 │
 ├── notebooks/
-│   ├── 01_data_collection.ipynb
-│   ├── 02_eda.ipynb
-│   ├── 03_feature_engineering.ipynb
-│   └── 04_ml_models.ipynb
+│   ├── 01_Working_notebook.ipynb
 │
 ├── dashboard/
-│   └── app.py
+│   └── app.py            # Streamlit dashboard
 │
 ├── reports/
 │   └── final_report.pdf
@@ -122,35 +112,38 @@ Used for:
 
 ## 📊 Features Extracted
 
-* LapTime, SectorTimes
-* Speed, Throttle, Brake usage
-* Tire Compound, TireLife
-* PitInTime, PitOutTime, PitStopCount
-* Weather: AirTemp, TrackTemp, Rain
-* GridPosition, RacePosition, Overtakes
-* RaceStint patterns
+* LapTime, Sector1/2/3 Times
+* Tyre Compound, Tyre Life, Stints
+* PitInTime, PitOutTime, Pit Stop Count
+* First Pit Stop Lap
+* Average Pit Duration
+* Grid Position, Finish Position, Points
+* Driver and team performance aggregates
+* Weather context (air temperature, track temperature, rain flags)
 
 ---
 
 ## 🤖 Machine Learning Models
+The project uses interpretable, lightweight models focused on historical strategy behavior.
 
-* **Random Forest / XGBoost Classifier** (Pit Stop Count Prediction)
-* **XGBoost Regressor** (First Pit Stop Lap Prediction)
-* **Multiclass Classifier** (Tire Strategy Type)
-* **Logistic Regression** (Strategy Effectiveness Classification)
+<img width="787" height="136" alt="{90B89681-4C02-479F-98DA-C3DB2CFEE605}" src="https://github.com/user-attachments/assets/4f6237c1-3b86-497e-ac0e-b150ded65fa1" />
 
+Note : ⚠️ These models do not predict optimal strategies.
+They learn historical strategy patterns under similar race conditions.
 ---
 
 ## 📺 Dashboard Highlights
 
-Built using **Streamlit**, featuring:
+The Streamlit dashboard enables interactive exploration of race strategies:
 
 * Driver Performance Tracker
-* Team Comparison
-* Tire Strategy Visualizer
-* Lap Time Consistency Heatmaps
-* Strategy Recommendation Panel based on historical patterns
-
+* Team-level strategy comparison
+* Tyre Strategy Visualizer
+* Lap time consistency and degradation analysis
+* Strategy pattern prediction panel based on historical data
+* Model evaluation plots (actual vs predicted, distributions)
+* The dashboard is designed as a decision-support and storytelling tool, not a real-time race    simulator.
+  
 ---
 
 ## 🧠 Key F1 Concepts Used
@@ -181,8 +174,18 @@ By the end of this project, you will have:
 
 ## ⚠️ Limitations
 
-**This project does **not** claim to provide optimal or real-time race strategies. It predicts **historically effective strategy patterns under similar conditions**, based on past race data and early-race indicators. Unpredictable events such as late safety cars, sudden weather changes, team orders, and real-time driver feedback are not modeled due to data access limitations. The project is therefore positioned as a **historical decision-support and pattern-learning system**, not a real-time optimization engine.
-**
+**This project does not claim to provide optimal or real-time race strategies.**
+
+It predicts historically effective strategy patterns based on past race data and early-race indicators. Unpredictable events such as:
+
+* Late safety cars
+* Sudden weather changes
+* Team orders
+* Real-time driver feedback
+are not modeled due to data access limitations.
+
+**The project is positioned as a historical decision-support and pattern-learning system, not a real-time optimization engine.**
+
 ---
 
 ## 💡 Future Improvements
@@ -197,8 +200,3 @@ By the end of this project, you will have:
 
 **Manjunath Reddy**
 
----
-
-## 📜 License
-
-This project is created for educational and portfolio purposes.
