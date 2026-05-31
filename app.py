@@ -246,10 +246,7 @@ if page == "🏁 Race Summary & Leaderboard":
                     if len(numeric_cols) > 0 and len(categorical_cols) > 0:
                         st.bar_chart(df_eda.set_index(categorical_cols[0])[numeric_cols[0]], color="#e10600")
 
-    if os.path.exists("telemetry-analysis.png"):
-        st.markdown("---")
-        st.subheader("🏎️ Telemetry Analysis")
-        st.image("telemetry-analysis.png", use_container_width=True)
+    
 
 # --- PAGE 2: MODEL 1 - PIT STOP COUNT ---
 elif page == "🛑 Model 1: Pit Stop Count":
